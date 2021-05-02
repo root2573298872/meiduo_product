@@ -56,7 +56,7 @@ class RegisterView(View):
         try:
             user = User.objects.create_user(username=username, password=password, mobile=mobile)
         except DatabaseError:
-            return render(request, 'register.html', {"register_errmsg", "注册失败"})
+            return render(request, 'register.html', {"register_errmsg":"注册失败"})
         login(request, user)
         response = redirect(reverse('contents:index'))
         response.set_cookie('username', user.username, max_age=3600 * 24 * 15)
