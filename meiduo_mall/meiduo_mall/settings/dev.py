@@ -186,3 +186,5 @@ LOGGING = {
 }
 # 配置静态文件加载路径
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+AUTH_USER_MODEL = 'users.User'
